@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- <mapper namespace="연동할 DAO 클래스 or 호출할 별칭"> -->
+<mapper namespace="memberDto">
+
+	<insert id="insert" parameterType="memberDto">
+		insert into member values(member_seq.nextval, #{id}, #{pw}, #{nick}, to_date(#{birth}, 'YYYY-MM-DD'), #{email}, #{phone}, #{post}, #{addr1}, #{addr2}, '일반', 500, sysdate)
+	</insert>
+	
+	<select id="login" resultType="memberDto" parameterType="memberDto">
+		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<!-- <update id="edit" parameterType="usedbookDto">
+		update usedbook set name=#{name} writer=#{writer} publisher=#{publisher} price=${price} status=#{status} where no=#{no};
+	</update> -->
+	<!-- <delete id="remove" parameterType="usedbookDto">
+		delete auth where ip=#{ip} and key=#{key}
+	</delete> -->
+
+</mapper>
