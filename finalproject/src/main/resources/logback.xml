@@ -20,7 +20,7 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
     
     <!-- 파일로 로그를 남김 -->
     <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-             <file>F:\test.log</file>
+             <file>C:\test.log</file>
              <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
              			<charset>UTF-8</charset>
                       	<Pattern>
@@ -36,7 +36,7 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
 
              <!-- 파일을 덮어쓰는 정책 -->
              <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-                      <FileNamePattern>F:\test.%i.log.zip</FileNamePattern>
+                      <FileNamePattern>C:\test.%i.log.zip</FileNamePattern>
                       <!--
                           MinIndex가 1이고, MaxIndex가 10이므로, 위의 파일 이름 패턴에 따라 아래의 로그 파일이 생길 것이다.
                           logexample2.1.log.zip   logexample2.2.log.zip  .... logexample2.10.log.zip
